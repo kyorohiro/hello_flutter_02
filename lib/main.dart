@@ -15,9 +15,25 @@ class MyApp extends fl.StatelessWidget {
           title: fl.Text("Welcome to Flutter"),
         ),
         body: fl.Center(
-          child: fl.Text(wordPair.asPascalCase),
+          child:
+          //fl.Text(wordPair.asPascalCase),
+          RandomWords(),
         ),)
       );
     return app;
+  }
+}
+
+class RandomWords extends fl.StatefulWidget {
+  @override
+  fl.State<fl.StatefulWidget> createState() {
+    return new RandomWorldsState();
+  }
+}
+
+class RandomWorldsState extends fl.State<RandomWords> {
+  fl.Widget build(fl.BuildContext context) {
+    final wordPair = en.WordPair.random();
+    return fl.Text(wordPair.asPascalCase);
   }
 }
