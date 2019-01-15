@@ -6,25 +6,16 @@ void main() {
 
 class MyApp extends fl.StatelessWidget {
   fl.Widget build(fl.BuildContext context) {
-    fl.Directionality root = new fl.Directionality(child: new fl.Text("Hello, World!!"),textDirection: fl.TextDirection.ltr,);
-    return root;
+    fl.MaterialApp app =
+      new fl.MaterialApp(
+        title: "Welcome to Fluttr",
+        home: fl.Scaffold(appBar: fl.AppBar(
+          title: fl.Text("Welcome to Flutter"),
+        ),
+        body: fl.Center(
+          child: fl.Text("Hello World!!"),
+        ),)
+      );
+    return app;
   }
 }
-
-/*
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
-    );
-  }
-}*/
