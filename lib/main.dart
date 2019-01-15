@@ -22,10 +22,32 @@ class MyHomePage extends fl.StatefulWidget {
 }
 
 class MyHomePageState extends fl.State<MyHomePage> {
+  bool _visible = true;
+
   fl.Widget build(fl.BuildContext context) {
     return fl.Scaffold(
       appBar: fl.AppBar(title: fl.Text(widget.title),),
-      body: fl.Center(child: fl.Text("xx"),),
+      body: fl.Center(
+        child: fl.AnimatedOpacity(
+          opacity: _visible ? 1.0 : 0.0,
+          duration: Duration(milliseconds: 50),
+          child: fl.Container(
+            width: 200.0,
+            height: 200.0,
+            color: fl.Colors.green,
+          ),
+        ),
+      ),
+      floatingActionButton: fl.FloatingActionButton(
+        onPressed: (){
+          print(">>>>>> PRESSED");
+          setState(() {
+            _visible = !_visible;
+          });
+        },
+        tooltip: "Toggle Opacity",
+        child: fl.Icon(fl.Icons.flip),
+      ),
     );
   }
 }
