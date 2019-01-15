@@ -35,11 +35,7 @@ class RandomWords extends fl.StatefulWidget {
 class RandomWorldsState extends fl.State<RandomWords> {
   final _suggestions = <en.WordPair>[];
   final _beggerFont = const fl.TextStyle(fontSize: 18.0);
-  /*fl.Widget build(fl.BuildContext context) {
-    final wordPair = en.WordPair.random();
-    return fl.Text(wordPair.asPascalCase);
-  }
-  */
+
   @override
   fl.Widget build(fl.BuildContext context) {
     return fl.Scaffold(
